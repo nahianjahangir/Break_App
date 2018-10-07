@@ -32,10 +32,12 @@ def initialize():
 		# If the button "Mix" is pressed
 		else:
 			# The three input widgets
-			inputs = [[len(app.getEntry("m1")), "m1"],
-			[len(app.getEntry("m2")), "m2"],
-			[len(app.getEntry("m3")), "m3"]
-			]
+			inputs = [[len(app.getEntry(e)), e] for e in entries]
+			# inputs = [
+			# [len(app.getEntry("m1")), "m1"],
+			# [len(app.getEntry("m2")), "m2"],
+			# [len(app.getEntry("m3")), "m3"]
+			# ]
 
 			# If all three are valid, we run the code
 			validations = 0
