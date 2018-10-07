@@ -1,0 +1,8 @@
+Number of combinations are: 6
+
+1) 6step 12step 3step
+2) 6step 3step 12step
+3) 12step 6step 3step
+4) 12step 3step 6step
+5) 3step 6step 12step
+6) 3step 12step 6step
