@@ -16,6 +16,10 @@ def initialize():
 	app.setBg("orange")
 	app.setFont(18)
 
+	# Add file input widget
+	app.addValidationEntry("f1")
+	app.setEntryDefault("f1", "Filename")
+
 	# Adding input widgets for Move 1, 2, and 3
 	entries = []
 	for i in range(num_moves):
@@ -33,10 +37,14 @@ def initialize():
 		else:
 			# The three input widgets
 			inputs = [[len(app.getEntry(e)), e] for e in entries]
+			inputs.append([len(app.getEntry("f1")), "f1"])
 
 			# If all three are valid, we run the code. Check the length of input
 			# to have at least one character in the input
 			validations = 0
+			# Number of moves + filename 
+			valid_nums = num_moves + 1
+
 			for e in inputs:
 				if (e[0] <= 0):
 					app.setEntryInvalid(e[1])
@@ -44,9 +52,10 @@ def initialize():
 					app.setEntryValid(e[1])
 					validations += 1
 
-			if (validations == num_moves):
-				routines = bboy.getMoves(app.getAllEntries().values())
-				bboy.toFile(routines)
+			if (validations == valid_nums):
+				routines = bboy.getMoves([app.getEntry(m) for m in entries])
+#				routines = bboy.getMoves(app.getAllEntries().values())
+				bboy.toFile(routines, app.getEntry("f1"))
 
 				# Create message widget
 				## Output to another window

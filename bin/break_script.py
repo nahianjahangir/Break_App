@@ -20,9 +20,9 @@ def getMoves(moves):
 	return combinations
 
 ## Write the combinations to a file
-def toFile(combinations):
+def toFile(combinations, name_of_file):
 	# Get the name of the file from the user
-	userFileName = input("Name of file is: ") + ".txt"
+	userFileName = name_of_file + ".txt"
 	# Making the right path to put where the damn text file should be -_-
 	data_folder = Path('output')
 	path = data_folder / userFileName
