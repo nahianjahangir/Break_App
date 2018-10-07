@@ -2,6 +2,8 @@ from appJar import gui
 import break_script as bboy
 
 def initialize():
+	# Number of moves used in the script
+	num_moves = 3
 
 	# Sets the size of the gui
 	app = gui("Combo Formula", "600x400")
@@ -16,7 +18,7 @@ def initialize():
 
 	# Adding input widgets for Move 1, 2, and 3
 	entries = []
-	for i in range(3):
+	for i in range(num_moves):
 		iternum = str(i+1)
 		entries.append("m" + iternum)
 		app.addValidationEntry("m" + iternum)
@@ -44,10 +46,10 @@ def initialize():
 					app.setEntryValid(e[1])
 					validations += 1
 
-			if (validations == 3):
-				# Create message widget
+			if (validations == num_moves):
 				routines = bboy.getMoves(app.getAllEntries().values())
 
+				# Create message widget
 				## Output to another window
 				message = ""
 				for combo in routines:
