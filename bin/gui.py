@@ -33,13 +33,9 @@ def initialize():
 		else:
 			# The three input widgets
 			inputs = [[len(app.getEntry(e)), e] for e in entries]
-			# inputs = [
-			# [len(app.getEntry("m1")), "m1"],
-			# [len(app.getEntry("m2")), "m2"],
-			# [len(app.getEntry("m3")), "m3"]
-			# ]
 
-			# If all three are valid, we run the code
+			# If all three are valid, we run the code. Check the length of input
+			# to have at least one character in the input
 			validations = 0
 			for e in inputs:
 				if (e[0] <= 0):
@@ -50,6 +46,7 @@ def initialize():
 
 			if (validations == num_moves):
 				routines = bboy.getMoves(app.getAllEntries().values())
+				bboy.toFile(routines)
 
 				# Create message widget
 				## Output to another window
