@@ -47,6 +47,8 @@ def initialize():
 			if (validations == 3):
 				# Create message widget
 				routines = bboy.getMoves(app.getAllEntries().values())
+
+				## Output to another window
 				message = ""
 				for combo in routines:
 					for move in combo:
