@@ -1,4 +1,5 @@
 from pathlib import Path 
+from random import shuffle
 
 ## Method that takes in moves and spits out combinations of three
 
@@ -17,6 +18,7 @@ def getMoves(moves):
 					combo = [step, next_step, final_step]
 					if (combo not in combinations):
 						combinations.append(combo)
+	shuffle(combinations)
 	return combinations
 
 ## Write the combinations to a file
