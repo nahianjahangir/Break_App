@@ -3,7 +3,7 @@ import break_script as bboy
 
 def initialize():
 	# Number of moves used in the script
-	num_moves = 3
+	num_moves = 9
 
 	# Sets the size of the gui
 	app = gui("Combo Formula", "600x400")
