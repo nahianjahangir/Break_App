@@ -1,0 +1,8 @@
+Number of combinations are: 6
+
+1) a b c
+2) b c a
+3) c a b
+4) b a c
+5) c b a
+6) a c b

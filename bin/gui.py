@@ -59,21 +59,23 @@ def initialize():
 
 				# Create message widget
 				## Output to another window
-				message = ""
-				for combo in routines:
-					for move in combo:
-						if (move != combo[-1]):
-							message += move + " -> "
-						else:
-							message += move + "\n"
-				app.startSubWindow("Break Output",modal=True)
-				app.setFont(size=20, family="Verdana")
-				app.addLabel("output", "Combos")
-				app.setLabelBg("output", "orange")
-				app.setBg("orange")
-				app.setSize(400,200)
-				app.addMessage("routines", message)
-				app.showSubWindow("Break Output")
+				popout = False
+				if popout == True:
+					message = ""
+					for combo in routines:
+						for move in combo:
+							if (move != combo[-1]):
+								message += move + " -> "
+							else:
+								message += move + "\n"
+					app.startSubWindow("Break Output",modal=True)
+					app.setFont(size=20, family="Verdana")
+					app.addLabel("output", "Combos")
+					app.setLabelBg("output", "orange")
+					app.setBg("orange")
+					app.setSize(400,200)
+					app.addMessage("routines", message)
+					app.showSubWindow("Break Output")
 
 
 	# Creating buttons
